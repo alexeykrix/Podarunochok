@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "vite build --base=/Podarunochok/ && gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
