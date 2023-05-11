@@ -1,0 +1,104 @@
+html {
+	scroll-behavior: smooth;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	overscroll-behavior: none;
+	@include max(xs) {
+		width: 100%;
+		overflow-x: hidden;
+	}
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	overscroll-behavior: none;
+	@include max(xs) {
+		width: 100%;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
+
+*::before,
+*::after {
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+label {
+	cursor: default;
+}
+
+input,
+textarea, 
+button {
+	cursor: default;
+	outline: none;
+	border-radius: none;
+	border: none;
+
+	font-family: inherit;
+	&::placeholder {
+		font-family: inherit;
+	}
+
+	&:focus,
+	&:active {
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+}
+
+textarea::-webkit-scrollbar {
+	display: none;
+}
+
+button {
+	font-family: inherit;
+	padding: 0;
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer	;
+	color: inherit;
+}
+
+svg, img {
+	vertical-align: top;
+}
+img, video {
+  object-fit: cover;
+}

@@ -1,0 +1,42 @@
+// mixins for adaptives
+
+@mixin max($size) {
+    @if map-has-key($breakpoints-max, $size) {
+        @media (max-width: #{map-get($breakpoints-max, $size)}px) {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{$size}px) {
+            @content;
+        }
+    }
+}
+
+@mixin min($size) {
+    @if map-has-key($breakpoints-min, $size) {
+        @media (min-width: #{map-get($breakpoints-min, $size)}px) {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$size}px) {
+            @content;
+        }
+    }
+}
+
+
+// mixin offsets 
+
+@function foffset($color, $min-viewport) {
+  $color-map: map-get($offsets, $color);
+  @if map-has-key($color-map, $min-viewport) {
+    @return map-get($color-map, $min-viewport);
+  }
+}
+
+@mixin offset-media($prop, $color) {
+  #{$prop}: foffset($color, md);
+  @media screen and (max-width: #{map-get($breakpoints-max, xs)}px) {
+    #{$prop}: foffset($color, xs);
+  }
+}

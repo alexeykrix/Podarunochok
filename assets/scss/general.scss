@@ -1,0 +1,45 @@
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background: $color-bg;
+}
+
+.header {
+  border-bottom: 1px solid $color-accent;
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include offset-media(padding-top, purple);
+    @include offset-media(padding-bottom, purple);
+  }
+  &-nav {
+    flex-grow: 1;
+
+    &__list {
+      display: flex;
+      justify-content: flex-end;;
+      align-items: center;
+      gap: 24px;
+    }
+    &__item {
+
+      &__search {
+        margin-right: auto;
+        margin-left: auto;
+        svg {
+          margin-bottom: -5px;
+          display: block;
+        }
+      }
+    }
+  }
+  &-btn {
+    display: flex;
+    gap: 5px;
+  }
+}

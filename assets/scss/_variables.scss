@@ -1,0 +1,65 @@
+//transitions
+
+$transition: 0.5s ease;
+$transition-300: 0.3s ease;
+
+//colors
+
+$color-bg: #F5F5F5;
+$color-accent: #F40062;
+$color-text: #333333;
+$color-highlight: #FF8C8C;
+
+//breakpoints max
+
+$breakpoints-max: (
+  xs: 767,
+  sm: 1023,
+  md: 1279,
+  bg: 1279,
+  lg: 1919
+);
+
+//breakpoints min
+
+$breakpoints-min: (
+  xxs: 320,
+  xs: 768,
+  sm: 1024,
+  md: 1280,
+  bg: 1280,
+  lg: 1920
+);
+
+//offsets
+
+$offsets: (
+  red: (
+    md: 80px, // < 1920
+    xs: 80px, // < 768
+  ),
+  coral: (
+    md: 64px,
+    xs: 58px,
+  ),
+  yellow: (
+    md: 48px,
+    xs: 40px,
+  ),
+  green: (
+    md: 32px,
+    xs: 32px,
+  ),
+  aqua: (
+    md: 24px,
+    xs: 24px,
+  ),
+  blue: (
+    md: 16px,
+    xs: 16px,
+  ),
+  purple: (
+    md: 8px,
+    xs: 11px,
+  ),
+);
