@@ -1,0 +1,129 @@
+@import '../index.scss';
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(249.93deg, #FCF5E5 8.91%, #FCF5E5 101.58%);
+
+  &-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &-content {
+    max-width: 600px;
+    width: 100%;
+  }
+  &-title {
+    font-size: 58px;
+    line-height: 100%;
+    color: $color-accent;
+    @include offset-media(margin-bottom, blue);
+  }
+  &-description {
+    display: flex;
+    flex-direction: column;
+    @include offset-media(margin-bottom, yellow);
+  }
+  &-image {
+    width: 534px;
+  }
+  &-btn {
+    width: 224px;
+  }
+}
+
+.catalog {
+  scroll-margin-top: 50px;
+
+  @include offset-media(padding-top, red);
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    @include offset-media(margin-bottom, coral);
+  }
+  &-info {
+    width: 304px;
+    
+    h1 {
+      @include offset-media(margin-bottom, purple);
+    }
+  }
+  &-filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__list {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 260px);
+    justify-content: space-between;
+    @include offset-media(row-gap, yellow);
+    @include offset-media(padding-bottom, yellow);
+    perspective: 1000px;
+  }
+  &-card {
+    width: 260px;
+    padding: 16px;
+    background: #fff;
+    border-radius: 34px;
+    text-align: center;
+    transform-style: preserve-3d;
+    
+    &__image {
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__title {
+      @include offset-media(margin-top, green);
+    }
+    &__description {
+      @include offset-media(margin-top, purple);
+      display: -webkit-box;
+      overflow: hidden;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      box-orient: vertical;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+    &__btn {
+      @include offset-media(margin-top, blue);
+      width: 100%;
+    }
+  }
+
+  &-loading {
+    @include offset-media(padding-bottom, yellow);
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include offset-media(gap, purple);
+
+      svg {
+        animation: rotate-loading 2s linear infinite;
+      }
+      @keyframes rotate-loading {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}
