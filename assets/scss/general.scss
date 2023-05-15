@@ -6,7 +6,6 @@
 
 body {
   background: $color-bg;
-  opacity: 0;
   transition: opacity 2s ease;
 }
 
@@ -23,6 +22,12 @@ body {
   &-small {
     @extend .p2;
     padding: 2px 13px;
+  }
+
+  svg {
+    path, circle {
+      transition: $transition-400;
+    }
   }
 
   &:hover {
@@ -100,5 +105,20 @@ body {
         transition: $transition-400;
       }
     }
+  }
+}
+
+.footer {
+  background: $color-text;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    @include offset-media(padding-top, blue);
+    @include offset-media(padding-bottom, blue);
+  }
+
+  &-text {
+    color: $color-bg;
   }
 }

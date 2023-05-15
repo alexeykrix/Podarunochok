@@ -25,8 +25,38 @@
     @include offset-media(margin-bottom, yellow);
   }
   &-image {
+    position: relative;
     width: 534px;
+    height: 377.98px;
+
+    &__mobile {
+      display: none;
+      @include max(xs) {
+        display: block;
+      }
+    }
+
+    &__part {
+      position: absolute;
+      @include max(xs) {
+        display: none;
+      }
+      
+      &-bg {
+        left: 10px;
+        top: 59px;
+      }
+      &-middle {
+        left: 183px;
+        top: 39px;
+      }
+      &-fg {
+        left: 103px;
+        top: 254px;
+      }
+    }
   }
+  //  hero-image__part-bg
   &-btn {
     width: 224px;
   }

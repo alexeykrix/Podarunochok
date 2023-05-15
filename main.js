@@ -64,22 +64,38 @@ const startAnimation = () => {
       }
     })
   })
-  
-  const cards = document.querySelectorAll('.catalog-card')
-  cards.forEach(el => {
+
+  const images = document.querySelectorAll('.hero-image__part')
+  images.forEach((el, id) => {
     gsap.from(el, {
-      rotateX: 10,
-      y: 20,
-      // transformOrigin: 'top',
+      y: '-100vh',
+      rotate: 5,
+      transformOrigin: 'left center',
+      duration: 1,
+      delay: 0.3 + id * 0.05,
+    })
+  })
+
+
+  const buttons = document.querySelectorAll('.catalog-filters__list .btn')
+  buttons.forEach((el, id) => {
+    gsap.from(el, {
+      x: 15,
+      opacity: 0,
+      rotate: 5,
+      transformOrigin: 'left center',
+      duration: 0.6,
+      delay: 0.2 + id * 0.05,
   
       scrollTrigger: {
         trigger: el,
-        scrub: true,
         start: 'top bottom',
-        end: 'bottom 70%',
+        end: 'bottom bottom',
       }
     })
   })
+
+
 }
 
 
