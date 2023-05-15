@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-3cfb730f.js";const e=document.querySelectorAll(".gallery-thumbs__btn");e.forEach(t=>{t.addEventListener("click",o=>{e.forEach(c=>c.classList.remove("-active")),t.classList.add("-active")})});document.addEventListener("DOMContentLoaded",()=>[document.fonts.ready.then(()=>{document.body.style.opacity="1"})]);
