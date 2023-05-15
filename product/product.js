@@ -8,3 +8,9 @@ galleryThumbs.forEach(el => {
     el.classList.add('-active')
   })
 })
+
+document.addEventListener('DOMContentLoaded', () => [
+  document.fonts.ready.then( () => {
+    document.body.style.opacity = '1'
+  })
+])
