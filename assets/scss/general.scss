@@ -135,9 +135,27 @@ body {
     justify-content: space-between;
     @include offset-media(padding-top, blue);
     @include offset-media(padding-bottom, blue);
+    @include max(xs) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 15px;
+      align-items: center;
+    }
   }
 
   &-text {
     color: $color-bg;
+
+    @include max(xs) {
+      font-size: 12px;
+    }
+
+    &:nth-child(2) {
+      @include max(xs) {
+        width: 100%;
+        text-align: center;
+        order: -1;
+      }
+    }
   }
 }

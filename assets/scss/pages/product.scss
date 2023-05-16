@@ -2,6 +2,9 @@
 
 body {
   padding-top: 50px;
+  @include max(xs) {
+    padding-top: 45px;
+  }
 }
 .product {
   @include offset-media(margin-top, red);
@@ -33,6 +36,10 @@ body {
     display: flex;
     flex-direction: column;
 
+    @include max(xs) {
+      display: none;
+    }
+
     &__text {
       @include offset-media(margin-bottom, aqua);
     }
@@ -48,16 +55,31 @@ body {
   display: flex;
   gap: 24px;
 
+  @include max(xs) {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
   &-thumbs {
     display: flex;
     gap: 24px;
     flex-direction: column;
+
+    @include max(xs) {
+      flex-direction: row;
+      gap: 8px;
+    }
 
     &__btn {
       width: 116px;
       height: 116px;
       border-radius: 20px;
       overflow: hidden;
+
+      @include max(xs) {
+        width: 80px;
+        height: 80px;
+      }
 
       &.-active {
         border: 4px solid #F40062;
@@ -68,6 +90,13 @@ body {
   &-preview {
     width: 536px;
     height: 536px;
+
+    @include max(xs) {
+      border-radius: 20px;
+      height: auto;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
   }
 
   img {
@@ -96,6 +125,10 @@ body {
     display: grid;
     grid-template-columns: 525px 1fr;
     @include offset-media(margin-bottom, yellow);
+    
+    @include max(xs) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-sub {
@@ -106,10 +139,17 @@ body {
 .details-wrap > .details:first-child {
   padding-right: 48px;
   border-right: 1px solid $color-accent;
+  @include max(xs) {
+    padding-right: 0;
+    border: none;
+  }
 }
 
 .details-wrap > .details-group {
   padding-left: 48px;
+  @include max(xs) {
+    padding-left: 0;
+  }
 }
 
 
