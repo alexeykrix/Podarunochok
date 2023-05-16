@@ -2,6 +2,10 @@
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  @include max(xs) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 body {
@@ -54,6 +58,11 @@ body {
   width: 100%;
   z-index: 100;
   top: 0;
+  &-logo {
+    @include max(xs) {
+      width: 134px;
+    }
+  }
   &-inner {
     display: flex;
     justify-content: space-between;
@@ -69,6 +78,9 @@ body {
       justify-content: flex-end;;
       align-items: center;
       gap: 24px;
+      @include max(xs) {
+        gap: 15px;
+      }
     }
     &__item {
 
@@ -78,6 +90,13 @@ body {
         svg {
           margin-top: 2px;
           display: block;
+        }
+
+        @include max(xs) {
+          margin: 0;
+          span {
+            display: none;
+          }
         }
       }
     }

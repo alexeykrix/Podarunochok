@@ -13,6 +13,10 @@ h1, .h1 {
   line-height: 44px;
   text-transform: uppercase;
   color: $color-text;
+  @include max(xs) {
+    font-size: 25px;
+    line-height: 30px;
+  }
 }
 
 h2, .h2 {
@@ -30,6 +34,9 @@ p, .p1 {
   font-size: 16px;
   line-height: 19px;
   color: $color-text;
+  @include max(xs) {
+    font-size: 14px;
+  }
 }
 
 .p2 {

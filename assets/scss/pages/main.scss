@@ -4,6 +4,13 @@
   height: 100vh;
   background: linear-gradient(249.93deg, #FCF5E5 8.91%, #FCF5E5 101.58%);
 
+  @include max(xs) {
+    padding-top: 45px;
+    height: auto;
+    padding-bottom: 15px;
+    position: relative;
+  }
+
   &-inner {
     height: 100%;
     display: flex;
@@ -18,6 +25,10 @@
     line-height: 100%;
     color: $color-accent;
     @include offset-media(margin-bottom, blue);
+    @include max(xs) {
+      font-size: 25px;
+      padding-top: 80px;
+    }
   }
   &-description {
     display: flex;
@@ -28,11 +39,19 @@
     position: relative;
     width: 534px;
     height: 377.98px;
+    @include max(xs) {
+      position: absolute;
+      right: 15px;
+      width: 142.69px;
+      height: 101px;
+      top: 50%;
+    }
 
     &__mobile {
       display: none;
       @include max(xs) {
         display: block;
+        width: 100%;
       }
     }
 
@@ -66,10 +85,18 @@
   scroll-margin-top: 50px;
 
   @include offset-media(padding-top, red);
+  @include max(xs) {
+    padding-top: 15px;
+  }
   &-header {
     display: flex;
     justify-content: space-between;
     @include offset-media(margin-bottom, coral);
+
+    @include max(xs) {
+      flex-direction: column;
+      gap: 64px;
+    }
   }
   &-info {
     width: 304px;
@@ -84,9 +111,25 @@
     justify-content: space-between;
     align-items: center;
     
+    .btn:not(.btn-small) {
+      margin-top: 14px;
+    }
+
     &__list {
       display: flex;
       gap: 16px;
+
+      @include max(xs) {
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        gap: 5px;
+        padding-bottom: 0;
+
+        .btn {
+          flex-shrink: 0;
+        }
+      }
     }
   }
 
@@ -97,6 +140,10 @@
     @include offset-media(row-gap, yellow);
     @include offset-media(padding-bottom, yellow);
     perspective: 1000px;
+    
+    @include max(xs) {
+      grid-template-columns: repeat(2, 165px);
+    }
   }
   &-card {
     width: 260px;
@@ -105,12 +152,23 @@
     border-radius: 34px;
     text-align: center;
     transform-style: preserve-3d;
+
+    @include max(xs) {
+      width: 100%;
+      padding: 10px;
+      border-radius: 22px;
+    }
     
     &__image {
       border-radius: 20px;
       overflow: hidden;
       width: 100%;
       aspect-ratio: 1 / 1;
+
+      @include max(xs) {
+        border-radius: 16px;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -128,6 +186,9 @@
       box-orient: vertical;
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
+      @include max(xs) {
+        display: none;
+      }
     }
     &__btn {
       @include offset-media(margin-top, blue);
